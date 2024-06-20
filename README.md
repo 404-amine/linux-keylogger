@@ -5,7 +5,7 @@ Requirements
 
     Linux operating system
     GCC or any c compiler
-    Access to /dev/input/event0 (sudo access)
+    Access to /dev/input/event (sudo access)
 
 
 Compile and run the program:
