@@ -10,4 +10,5 @@ Requirements
 
 Compile and run the program:
         
-    $ chmod +x compile_script.sh   //this way the keylogger will operate in the background and you can close the terminal
+    $ chmod +x compile_script.sh   
+    $ sudo ./compile_script.sh    //this way the keylogger will operate in the background and you can close the terminal
