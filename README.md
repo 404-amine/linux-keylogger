@@ -1,5 +1,4 @@
 This project is a simple keyboard logging application developed in C for Linux systems. It captures keystrokes and logs them to a text file with timestamps.
-Features
 
 Requirements
 
